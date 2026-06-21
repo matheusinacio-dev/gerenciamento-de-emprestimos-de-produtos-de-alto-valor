@@ -169,6 +169,75 @@ def emprestar_produto():
     
     print("Produto não encontrado.")
     
+'''
+Função devolver produto - "em uso" e expirarante hoje -> "disponível"
+1 - checar se há produtos que expiram hoje. Se sim, informa os dados chave, se não, avisa que não tem.
+2 - pedir para selecionar um "id".
+3 - roda uma verificação na lista principal - centralizar os dados.
+    caso o id digitado não for encontrado -> mensagem no terminal "produto não encontrado"
+4 - alterar o estado para "disponível" e deletar os dados do empréstimo
+5 - mostrar a lista de produtos atualizada
+6 - mensagem do terminal de sucesso da operação
+
+'''
+def devolver_produto():
+    prazos_expirantes_hoje = []
+    for produto in produtos :
+        # checar se há produtos expirantes hoje e se não, avisar
+        if produto["estado"] == "em uso" and produto["data_devolucao"] == datetime.now().strftime("%d/%m/%Y"):
+            prazos_expirantes_hoje.append(produto)
+            print(f'{produto["id"]} - {produto["nome_produto"]} - {produto["descricao_produto"]} - Expira hoje: {produto["data_devolucao"]} ')
+        
+    if len(prazos_expirantes_hoje) == 0:
+        print("Nenhum produto espirante hoje!!!")
+        return
+
+    id_escolhido = int(validar_prenchimento("Digite o ID do produto que deseja devolver: "))
+
+    ## Modificar os produtos devolvidos
+    for produto in produtos :
+        if produto["estado"] == "em uso" and produto["data_devolucao"] == datetime.now().strftime("%d/%m/%Y") and produto["id"] == id_escolhido:
+
+            ## .pop() exclui a chave do dicionário e retorna (return) o valor do segundo parâmetro, nesse caso None.
+            produto.pop("funcionario", None)
+            produto.pop("cliente", None) 
+            produto.pop("data_emprestimo", None)
+            produto.pop("data_devolucao", None)  
+            produto.update({
+                "estado": "disponível",
+            })
+
+            print(produtos)  # debug
+
+            print("Produto devolvido com sucesso.")
+            return
+        
+    print("Produto não encontrado.")
+
+
+
+
+'''
+Função checar vencimentos - mesmo mês e ano 
+- produto[data_devolucao][3:] == datetime.now().strftime("%m/%Y")
+    O formato da string é: "dd/mm/aaaa" -> [3:] corta essa string do quarto caracter ao final (índice 3) para o formato "mm/aaaa"
+Checar quais são os prazos de empréstimo em vencimento ou vencidos do mês
+1 - cria uma variável para ver se tem ou não vencimentos mensais. 
+    Se sim, salva na variável e printa dados chave. 
+    Se não, printa um aviso de que não há vencimentos nesse mês.
+
+'''
+def checar_vencimentos():
+    prazos_vencimento_mensais = []
+
+    for produto in produtos:
+        if produto["estado"] == "em uso" and produto["data_devolucao"][3:] == datetime.now().strftime("%m/%Y") :
+            prazos_vencimento_mensais.append(produto)
+            print(f'ID: {produto["id"]} - {produto["nome_produto"]} - {produto["descricao_produto"]} - Cliente: {produto["cliente"]}  - Vence esse mês: {produto["data_devolucao"]} ')
+    if len(prazos_vencimento_mensais) == 0:
+        print("Nenhum produto espirante este mês!!!")
+        return
+
 
 '''
 1 - "posicionando" uma lista para receber os valores filtrados - criada depois
@@ -196,8 +265,10 @@ while True:
 Qual ação você deseja executar?
 1 - Cadastro de novo produto
 2 - Emprestar produto já cadastrado
-3 - Visualização de produtos emprestados ("em uso")
-4 - Visualização de produtos disponíveis ("disponível")
+3 - Devolver produto emprestado que espira hoje
+4 - Checar vencimentos mensais
+5 - Visualização de produtos emprestados ("em uso")
+6 - Visualização de produtos disponíveis ("disponível")
                                      
 Digite o número da ação desejada:''')
     
@@ -215,9 +286,15 @@ Digite o número da ação desejada:''')
                     break
              
         case "2":
-              emprestar_produto()
+            emprestar_produto()
 
         case "3":
+            devolver_produto()
+
+        case "4":
+            checar_vencimentos()
+
+        case "5":
               '''
               Explicação na linha 189
               - aqui o paramêtro nova_lista antes "posicionado" recebe a lista produtos_emprestados criada
@@ -226,8 +303,7 @@ Digite o número da ação desejada:''')
               filtrar_estado(produtos_emprestados, "em uso")
               print(f"Essa é a lista de produtos emprestados:\n{produtos_emprestados}")   
 
-
-        case "4":
+        case "6":
               '''
               Explicação na linha 189
               - aqui o paramêtro nova_lista antes "posicionado" recebe a lista produtos_disponiveis criada
@@ -236,5 +312,13 @@ Digite o número da ação desejada:''')
               filtrar_estado(produtos_disponiveis, "disponível")
               
               print(f"Essa é a lista de produtos disponíveis:\n{produtos_disponiveis}")
+
+
+
+
+
+
+
+
 
 
