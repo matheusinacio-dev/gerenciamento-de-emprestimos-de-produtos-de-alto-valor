@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "nome_produto": "Faca",
+    "descricao_produto": "Branca",
+    "estado": "em uso",
+    "funcionario": "Matheus M",
+    "cliente": "Eduardo F",
+    "data_emprestimo": "21/06/2026",
+    "data_devolucao": "22/06/2026"
+  },
+  {
+    "id": 2,
+    "nome_produto": "Garfo",
+    "descricao_produto": "Preto",
+    "estado": "em uso",
+    "funcionario": "Matheus F",
+    "cliente": "Sérgio",
+    "data_emprestimo": "21/06/2026",
+    "data_devolucao": "30/08/2026"
+  },
+  {
+    "id": 3,
+    "nome_produto": "Secadora Industrial",
+    "descricao_produto": "Muito quente",
+    "estado": "disponível"
+  },
+  {
+    "id": 4,
+    "nome_produto": "Impressora 3D",
+    "descricao_produto": "Usada pelo time de CS",
+    "estado": "disponível"
+  },
+  {
+    "id": 5,
+    "nome_produto": "Louça de Porcelana",
+    "descricao_produto": "Japonesa",
+    "estado": "disponível"
+  }
+]
