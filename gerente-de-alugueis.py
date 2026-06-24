@@ -157,7 +157,7 @@ def cadastro_produto():
           # Assim, quando a lista estiver vazia, o primeiro item recebe 0 + 1. Quando tiver 1 item, o segundo item recebe 1 + 1, e assim por diante.
           proximo_id = len(produtos) + 1
           nome_produto = validar_prenchimento("Nome do Produto com detalhes: ")
-          descricao_produto = validar_prenchimento("Descrição do Produto (ex.: local de uso,...): ")
+          descricao_produto = validar_prenchimento("Descrição do Produto (ex.: especificações,...): ")
           estado = "disponível"
           produto.update({
         "id": proximo_id,
