@@ -3,11 +3,7 @@
     "id": 1,
     "nome_produto": "Faca",
     "descricao_produto": "Branca",
-    "estado": "em uso",
-    "funcionario": "Matheus M",
-    "cliente": "Eduardo F",
-    "data_emprestimo": "21/06/2026",
-    "data_devolucao": "22/06/2026"
+    "estado": "disponível"
   },
   {
     "id": 2,
@@ -47,6 +43,12 @@
     "id": 7,
     "nome_produto": "Secadora Industrial",
     "descricao_produto": "200°F",
+    "estado": "disponível"
+  },
+  {
+    "id": 8,
+    "nome_produto": "PAPAEL A5",
+    "descricao_produto": "DE PAPEL",
     "estado": "disponível"
   }
 ]

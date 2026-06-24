@@ -340,10 +340,10 @@ while True:
 Qual ação você deseja executar?
 0 - Salvar lista de produtos
 1 - Cadastro de novo produto
-2 - Emprestar produto já cadastrado
-3 - Devolver produto emprestado que expira hoje
+2 - Alugar produto já cadastrado
+3 - Devolver produto alugado que expira hoje
 4 - Checar vencimentos mensais
-5 - Visualização de produtos emprestados ("em uso")
+5 - Visualização de produtos alugados ("em uso")
 6 - Visualização de produtos disponíveis ("disponível")
                                      
 Digite o número da ação desejada:''')
