@@ -366,6 +366,9 @@ Digite o número da ação desejada:''')
                     continue
                 elif quer_continuar.lower() == "n" :
                     break
+                else:
+                    print("Opção inválida. Voltando ao menu principal.")
+                    break
              
         case "2":
             emprestar_produto()
