@@ -6,7 +6,8 @@ Esse programa Python fornece suporte para o cadastro e aluguél de bens únicos,
 Nossa solução oferece rastreabilidade dos aluguéis, exigindo do usuário: nome, nome do cliente e data de devolução. Enquanto preenche automaticamente a data em que o produto foi alugado.
 
 ### Prévia
-Esse campo será preenchido ou retirado.
+
+![Demo](assets/demo.gif)
 
 ### Como instalar e deixar pronto para uso?
 Esse campo será preenchido ou retirado.

@@ -3,7 +3,11 @@
     "id": 1,
     "nome_produto": "Notebook Dell Latitude 5420",
     "descricao_produto": "Intel Core i5, 16GB RAM, SSD 512GB",
-    "estado": "disponível"
+    "estado": "em uso",
+    "funcionario": "Matheus",
+    "cliente": "Jonathan",
+    "data_emprestimo": "27/06/2026",
+    "data_devolucao": "29/06/2026"
   },
   {
     "id": 2,
@@ -19,7 +23,11 @@
     "id": 3,
     "nome_produto": "Impressora 3D Creality Ender 3",
     "descricao_produto": "Impressora 3D para prototipagem rápida",
-    "estado": "disponível"
+    "estado": "em uso",
+    "funcionario": "Jorge Feraz",
+    "cliente": "Papelaria XYZ",
+    "data_emprestimo": "27/06/2026",
+    "data_devolucao": "29/07/2026"
   },
   {
     "id": 4,
@@ -58,5 +66,11 @@
     "cliente": "João Móveis",
     "data_emprestimo": "25/06/2026",
     "data_devolucao": "25/06/2026"
+  },
+  {
+    "id": 9,
+    "nome_produto": "Forno Indústrial",
+    "descricao_produto": "Temp. máx de 1000° C",
+    "estado": "disponível"
   }
 ]
